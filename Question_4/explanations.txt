@@ -1,0 +1,12 @@
+echo -e "INO: Booting\nERROR: Disk full..." > app.log - Ran this command to create a fake log file with sample entries to test pipeline filter logic 
+tail -f app.log | grep " ERROR" > error_report.txt & - executed this pipeline in the background to real time errors and log 
+echo  "ERROR: Database connection failed" >> app.log - added a new error entry into live log file to test if our background monitor handles live data
+cat error_report.txt - used this to check final report file
+kill %1 - terminated the background tracking process safely
+
+
+JUSTIFICATION OF TOOLS:
+used tail -f because it monitors the log file continuously in real time 
+used a pipe)(|) to take the live text stream coming from tail and pass it directly into the input of grep
+used grep "ERROR" to filter through the raw text stream instantly 
+used redirection (>) to push the clean error entries directly into a seperate file named error_report.txt for record keeping
