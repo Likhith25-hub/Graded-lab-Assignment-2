@@ -1,0 +1,12 @@
+Command Explanations
+
+nano script.sh - I ran this command to open the editor and to write my code
+mkdir submissions - Used this  to create a folder to hold my test assignment files
+echo "...." > submissions/... - Ran these to put my files with matching text  into the folder so i could test the script
+chmod +x script.sh - Used this command to give my script execution permissions so it can run
+./script.sh - Executed this to run my script and also scan the submission folder for duplicates 
+cat system_report.txt - Ran this command to view the final report and also check my results
+
+JUSTIFICATION OF TOOLS:
+Used md5sum because generating a hash is the most reliable way to check if file cotents are exactly identical
+Used single arrow(>) to clear report file at the beginning  and double arrow (>>) to append new text to summary report
