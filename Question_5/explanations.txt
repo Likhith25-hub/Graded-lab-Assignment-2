@@ -1,0 +1,13 @@
+EVALUATION OF VI RECOVERY MECHANISMS:
+
+Swap files (.swp): automatically created by vi while a file is being edited. It stores unsaved changes dynamically in real time and acts as hidden shield against sudden system failures or power cuts
+undo history: keeps track of recent modifications made during an active editing session. however it is temporary memory and completely wipes out if the sytem or terminal crashes before saving.
+Registrers: acts as internal clipboards inside vi to hold deleted or copied texts, like undo history, they live in temporary RAM 
+Backup files: creates a copy of the older version of a file right when you hit save. while helpful for reverting mistakes, it fails completely here because the file was never saved before the crash.
+Auto recovery: the automatic process where vi checks for a matching active swap file when reopening a crashed file and prompts the user to restore their data.
+
+PROPOSED STRATEGY AND JUSTIFICATION:
+The most reliable recovery strategy is to use the swap file auto recovery mechanism by running the command : vi -r filename
+
+JUSTIFICATION OF TOOLS:
+Chose the swap file auto recovery mechanism because it is the only system tool that actively preserves unsaved data on the physical storage disk during a total crash. when vi opens, it writes live chnages direvtly to a hidden swap file rather than temporary RAM memory. This ensures that even if the system loses power or crashes instantly, the developer can securely retrieve every unsaved upto the moment of failure by simply using the recovery flag.
