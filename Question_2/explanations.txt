@@ -1,0 +1,10 @@
+COMMAND EXPLANATIONS:
+
+nano server_monitor.c - Ran this to open the editor and write my code
+gcc server_monitor.c -o server_monitor - Used this to compile source file into an executable program 
+./server_monitor - Executed this to run my program and also see how it works
+
+JUSTIFICATION OF TOOLS:
+Used fork() because it is standard posix system call to create a new, seperate child from parent 
+Used kill() with sigterm beacuse it send safe termination signal to stop the child process when it freezes up
+Used waitpid() because it makes parent wait for child process to end.
