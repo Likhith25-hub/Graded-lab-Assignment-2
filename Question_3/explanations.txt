@@ -1,0 +1,13 @@
+Command explanations:
+
+nano file_utility.txt- Used this to open editor and also to write the code
+gcc file _utility.c -o file utility - Used this to compile the source file into executable program
+./file_utility - Executed this to run my program and also observe file creation and record retrival
+
+JUSTIFICATION OF TOOLS
+
+Used open() because it is direct system call to open or create files with specific read/write permissions
+Used write() to directly commit low level raw byte blocks of fixed size
+Used lseek() because it alters the read/write file and also allows to modify the record postions 
+used read() to pull precise amount of raw data blocks back into memory structures 
+used close() to free up system file descriptors and aslo to ensure data files are finalized safely
